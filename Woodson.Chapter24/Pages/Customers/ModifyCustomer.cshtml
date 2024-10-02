@@ -1,0 +1,67 @@
+﻿@page
+@model Woodson.Chapter24.Pages.Customers.ModifyCustomerModel
+@{
+}
+
+<h1>Modify Customer</h1>
+
+<label>Message: </label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<form method="post">
+    <input asp-for="Customer.CustomerID" type="hidden" />
+
+    <table>
+        <tr>
+            <td><label asp-for="Customer.LastName"></label></td>
+            <td><input asp-for="Customer.LastName" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.FirstName"></label></td>
+            <td><input asp-for="Customer.FirstName" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.MiddleInitial"></label></td>
+            <td><input asp-for="Customer.MiddleInitial" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.Address"></label></td>
+            <td><input asp-for="Customer.Address" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.City"></label></td>
+            <td><input asp-for="Customer.City" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.State"></label></td>
+            <td><input asp-for="Customer.State" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.ZipCode"></label></td>
+            <td><input asp-for="Customer.ZipCode" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.Phone"></label></td>
+            <td><input asp-for="Customer.Phone" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.EmailAddress"></label></td>
+            <td><input asp-for="Customer.EmailAddress" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.Password"></label></td>
+            <td><input asp-for="Customer.Password" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Customer.Notes"></label></td>
+            <td><input asp-for="Customer.Notes" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input asp-page-handler="Modify" type="submit" value="Modify" />
+                <a asp-page="CancelCustomer">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</form>

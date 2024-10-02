@@ -1,0 +1,53 @@
+﻿@page
+@model Woodson.Chapter24.Pages.Customers.MaintainCustomersModel
+@{
+}
+
+
+<h1>Maintain Customers</h1>
+
+<label>Message: </label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td><a asp-page="AddCustomer">Add</a></td>
+            <th><label>Last Name</label></th>
+            <th><label>First Name</label></th>
+            <th><label>Middle Initial</label></th>
+            <th><label>Address</label></th>
+            <th><label>City</label></th>
+            <th><label>State</label></th>
+            <th><label>Zip Code</label></th>
+            <th><label>Phone</label></th>
+            <th><label>Email Address</label></th>
+            <th><label>Password</label></th>
+            <th><label>Notes</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+            <tr>
+                <td>
+                    <a asp-page="ModifyCustomer"
+                    asp-route-intCustomerID="@item.CustomerID">Modify</a>
+                    <a asp-page="DeleteCustomer"
+                    asp-route-intCustomerID="@item.CustomerID" onclick="return confirm('Are you sure you want to delete this customer? CLick OK to delte them. Click Cancel to keep them.')">Delete</a>
+                </td>
+                <td><label>@item.LastName</label></td>
+                <td><label>@item.FirstName</label></td>
+                <td><label>@item.MiddleInitial</label></td>
+                <td><label>@item.Address</label></td>
+                <td><label>@item.City</label></td>
+                <td><label>@item.State</label></td>
+                <td><label>@item.ZipCode</label></td>
+                <td><label>@item.Phone</label></td>
+                <td><label>@item.EmailAddress</label></td>
+                <td><label>@item.Password</label></td>
+                <td><label>@item.Notes</label></td>
+            </tr>
+        }
+    </tbody>
+</table>
